@@ -1,0 +1,4 @@
+locals {
+  app = "grpc-app"
+}
+
