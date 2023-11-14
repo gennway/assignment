@@ -30,3 +30,26 @@ Example: Create or deploy workloads that consume excessive resources (CPU, memor
 Scenario: Multiple Node Failures
 
 Example: Simulate concurrent failures of multiple nodes within a GKE cluster. Validate if Kubernetes reschedules affected pods across available healthy nodes while maintaining the desired replica count and service availability.
+
+Scenario: High Availability Validation
+
+Example: Introduce simulated hardware failures and observe how GCE maintains high availability by automatically restarting instances or migrating them to healthy hardware.
+
+
+Scenario: Backup and Restore Validation
+
+Example: Test backup and restoration procedures for GCE instances to confirm data recovery processes in case of instance failure or data loss.
+
+
+Scenario: Subnet or Zone Failure
+
+Example: Introduce failures in specific subnets or zones and validate the GCP setup's ability to reroute traffic and maintain service availability.
+
+Scenario: Load Balancer Failover
+
+Example: Simulate a load balancer failure or disruption and validate if traffic is rerouted seamlessly to backup or redundant load balancers without affecting service availability.
+
+
+Scenario: Burst Load Handling
+
+Example: Simulate burst loads and sudden spikes in traffic to evaluate how GCP's autoscaling and load balancing mechanisms handle rapid changes in demand without performance degradation.
