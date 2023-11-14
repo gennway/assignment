@@ -1,0 +1,32 @@
+
+Scenario: Load Balancer Failure
+
+Destroy the load balancing services and check if traffic is 
+correctly distributed among healthy instances.
+
+Scenario: Disk Failure Resilience
+
+Simulate a disk failure on a GCE instance by corrupting or deleting disk. Verify if the system gracefully handles the failure, switches to backup disks or snapshots, and restores functionality without data loss.
+
+Scenario: High Availability Zone Failure
+
+Example: Simulate a failure in a GCE availability zone where instances are deployed. Check if instances automatically failover to healthy zones or if manually configured redundancy mechanisms work as expected.
+
+
+
+GKE
+
+Scenario: Node Draining
+
+Example: Initiate a node drain operation in GKE, simulating maintenance or decommissioning. Verify if Kubernetes gracefully terminates pods running on the draining node and reschedules them onto healthy nodes to maintain service availability.
+
+
+
+Scenario: Resource Exhaustion
+
+Example: Create or deploy workloads that consume excessive resources (CPU, memory) within pods. Validate if Kubernetes evicts or throttles such pods based on resource limits and ensures the stability of other workloads in the cluster.   + VPA
+
+
+Scenario: Multiple Node Failures
+
+Example: Simulate concurrent failures of multiple nodes within a GKE cluster. Validate if Kubernetes reschedules affected pods across available healthy nodes while maintaining the desired replica count and service availability.
