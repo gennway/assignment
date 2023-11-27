@@ -53,3 +53,50 @@ Example: Simulate a load balancer failure or disruption and validate if traffic 
 Scenario: Burst Load Handling
 
 Example: Simulate burst loads and sudden spikes in traffic to evaluate how GCP's autoscaling and load balancing mechanisms handle rapid changes in demand without performance degradation.
+
+
+Disk Failure Resilience:
+Simulate Disk Failure:
+
+Access GCP Compute Engine -> VM instances.
+Select the desired instance and its attached disk.
+Simulate disk failure by intentionally corrupting or deleting the disk.
+Verify System Response:
+
+Monitor instance health and logs to observe system behavior post-failure.
+Check if the system switches to backup disks or snapshots automatically and restores functionality without data loss.
+High Availability Zone Failure:
+Simulate Zone Failure:
+
+Access GCP Compute Engine -> Instance groups or deployments.
+Identify instances deployed in a specific zone and initiate a failure simulation (e.g., terminate instances or stop services in that zone).
+Check Failover Mechanisms:
+
+Monitor GCP's automatic failover mechanisms or manually configured redundancy solutions.
+Verify if instances automatically failover to healthy zones or if redundancy mechanisms function as expected.
+For GKE, reproducing scenarios involves working within the Kubernetes environment:
+
+Node Draining:
+Initiate Node Drain:
+
+Access Kubernetes cluster using kubectl or GCP Console.
+Drain a specific node using kubectl drain <node-name> command.
+Validate Pod Termination and Rescheduling:
+
+Monitor pods running on the drained node to ensure graceful termination.
+Verify if Kubernetes reschedules terminated pods onto healthy nodes to maintain service availability.
+Resource Exhaustion:
+Create Resource-Intensive Workloads:
+
+Deploy workloads within pods that consume excessive resources (CPU, memory) using resource requests or limits.
+Validate Kubernetes Eviction:
+
+Monitor Kubernetes event logs or describe pods to ensure Kubernetes evicts or throttles resource-consuming pods based on defined limits.
+Verify stability of other workloads in the cluster.
+Multiple Node Failures:
+Simulate Concurrent Node Failures:
+
+Intentionally cause failures in multiple nodes within the GKE cluster.
+Validate Pod Rescheduling:
+
+Monitor Kubernetes events to ensure affected pods are rescheduled across healthy nodes, maintaining desired replica counts and service availability.
